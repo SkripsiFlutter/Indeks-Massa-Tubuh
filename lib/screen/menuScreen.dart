@@ -37,7 +37,7 @@ class MenuScreen extends StatelessWidget {
                 onClicked: () {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
-                    return BmiScreen();
+                    return SplashScreen();
                   }));
                 }),
             SizedBox(height: 20.0),
