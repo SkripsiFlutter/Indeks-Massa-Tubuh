@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:numberpicker/numberpicker.dart';
 import '../../widget/card.dart';
+import '../../widget/constant.dart';
 
 class BmiScreen extends StatefulWidget {
   const BmiScreen({Key? key}) : super(key: key);
@@ -307,8 +308,115 @@ class _InputPageState extends State<BmiScreen> {
           )
         ],
       ),
-      
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showModalBottomSheet(
+              context: context,
+              builder: (context) {
+                return BottomSheet(
+                  backgroundColor: Colors.black,
+                    onClosing: () {},
+                    builder: (context) {
+                      return Container(
+                        margin: const EdgeInsets.symmetric(
+                            horizontal: 30, vertical: 50),
+                        height: 800,
+                        child: Center(
+                            child: Column(
+                          children: [
+                            Text(
+                              'Nilai IMT kamu adalah: ',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 18,
+                                  color: Colors.white.withOpacity(.8)),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              calculateBMI(height, weight),
+                              style: textTheme.bodyLarge,
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            Text(
+                              bmiResult(),
+                              style: textTheme.bodySmall,
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              bmiFeedBack(),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  height: 1.5,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 16,
+                                  color: Colors.white.withOpacity(.8)),
+                            ),
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                                Colors.black;
+                              },
+                              child: const Text('Close',
+                                  style: TextStyle(color: kblueColor)),
+                            )
+                          ],
+                        )),
+                      );
+                    });
+              });
+        },
+        backgroundColor: kblueColor,
+        shape: const CircleBorder(),
+        child: const Text(
+          'BMI',
+          style:
+              TextStyle(color: kbackgroundColor, fontWeight: FontWeight.bold),
+        ),
+      ),
     );
   }
 }
 
+double bmi = 18;
+calculateBMI(int height, int weight) {
+  bmi = weight / (height * height) * 10000;
+  return bmi.toStringAsFixed(1);
+}
+
+bmiResult() {
+  if (bmi < 18.5) {
+    return '(Berat badan kurang)';
+  } else if (bmi >= 18.5 && bmi < 23) {
+    return '(Normal)';
+  } else if (bmi >= 23 && bmi < 25) {
+    return '(Kelebihan berat badan dengan resiko)';
+  } else if (bmi >= 25 && bmi < 30) {
+    return '(Obesitas I)';
+  } else {
+    return '(Obesitas II)';
+  }
+}
+
+bmiFeedBack() {
+  if (bmi < 18.5) {
+    return 'Nilai IMT kurang dari 18.5 memiliki klasifikasi berat badan kurang. Anda perlu untuk menambah berat badan.';
+  } else if (bmi >= 18.5 && bmi < 23) {
+    return 'Nilai IMT 18.5-22.9 memiliki klasifikasi berat badan normal. Dengan mempertahankan berat badan yang sehat, Anda menurunkan risiko terkena masalah kesehatan yang serius.';
+  } else if (bmi >= 23 && bmi < 25) {
+    return 'Nilai IMT 23-24.9 memiliki klasifikasi kelebihan berat badan dengan resiko. Anda di sarankan untuk menurunkan berat badan karena kesehatan.';
+  } else if (bmi >= 25 && bmi < 30) {
+    return 'Nilai IMT 25-29.9 memiliki klasifikasi obesitas I. Anda di sarankan untuk menurunkan berat badan karena kesehatan.';
+  } else {
+    return 'Nilai IMT lebih dari 30 memiliki klasifikasi obesitas II. Kesehatan Anda mungkin berisiko jika Anda tidak menurunkan berat badan.';
+  }
+}
