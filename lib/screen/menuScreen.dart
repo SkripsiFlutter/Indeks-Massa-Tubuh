@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_berita/screen/menu/newsScreen.dart';
-import 'package:flutter_application_berita/screen/menu/tentangAplikasi.dart';
+import 'package:flutter_application_berita/screen/splashscreen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../widget/buttonwidget.dart';
 import 'menu/bmiScreen.dart';
-import 'menu/rekomendasiScreen.dart';
+import 'menu/splashScreen.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({Key? key}) : super(key: key);
@@ -38,7 +37,7 @@ class MenuScreen extends StatelessWidget {
                 onClicked: () {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
-                    return BmiScreen();
+                    return SplashScreen();
                   }));
                 }),
             SizedBox(height: 20.0),
@@ -47,7 +46,7 @@ class MenuScreen extends StatelessWidget {
                 onClicked: () {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
-                    return RekomendasiScreen();
+                    return SplashScreen();
                   }));
                 }),
             SizedBox(height: 20.0),
@@ -56,7 +55,7 @@ class MenuScreen extends StatelessWidget {
                 onClicked: () {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
-                    return NewsScreen();
+                    return SplashScreen();
                   }));
                 }),
             SizedBox(height: 20.0),
@@ -65,7 +64,7 @@ class MenuScreen extends StatelessWidget {
                 onClicked: () {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
-                    return tentangAplikasi();
+                    return SplashScreen();
                   }));
                 }),
             SizedBox(height: 80.0),
