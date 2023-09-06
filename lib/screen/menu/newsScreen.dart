@@ -88,7 +88,12 @@ class _NewsScreenState extends State<NewsScreen> {
             ),
             ),
             onTap: () {
-              
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => WebViewPage(url: article.url),
+                ),
+              );
             },
           ),
         ),
