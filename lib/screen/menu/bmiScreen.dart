@@ -71,7 +71,7 @@ class _InputPageState extends State<BmiScreen> {
                     children: [
                       const Icon(
                         Icons.male,
-                        color: Color.fromARGB(255, 39, 123, 250),
+                        color: Color.fromARGB(255, 0, 101, 252),
                       ),
                       const SizedBox(
                         height: 10,
@@ -103,7 +103,7 @@ class _InputPageState extends State<BmiScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Icon(Icons.female,
-                            color: Color.fromARGB(255, 255, 155, 189)),
+                            color: Color.fromARGB(255, 255, 93, 147)),
                         const SizedBox(
                           height: 10,
                         ),
@@ -315,7 +315,7 @@ class _InputPageState extends State<BmiScreen> {
               context: context,
               builder: (context) {
                 return BottomSheet(
-                  backgroundColor: Colors.black,
+                  backgroundColor: Color.fromARGB(255, 9, 0, 77),
                     onClosing: () {},
                     builder: (context) {
                       return Container(
