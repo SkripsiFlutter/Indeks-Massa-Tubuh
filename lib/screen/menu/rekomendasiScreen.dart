@@ -43,7 +43,7 @@ class RekomendasiScreen extends StatelessWidget {
                 style: GoogleFonts.robotoCondensed(
                   fontSize: 15.0,
                   fontWeight: FontWeight.w600,
-                  color: Color.fromARGB(255, 0, 99, 138),
+                  color: Color.fromARGB(255, 0, 4, 6),
                 ),
               ),
               SizedBox(
@@ -76,7 +76,7 @@ class RekomendasiScreen extends StatelessWidget {
                             child: Container(
                               decoration: BoxDecoration (
                                 borderRadius: BorderRadius.circular(10),
-                                color: Color.fromARGB(255, 0, 99, 138),
+                                color: Color.fromARGB(255, 0, 148, 206),
                               ),
                             ),
                           ),
@@ -147,7 +147,7 @@ class RekomendasiScreen extends StatelessWidget {
                             child: Container(
                               decoration: BoxDecoration (
                                 borderRadius: BorderRadius.circular(10),
-                                color: Color.fromARGB(255, 0, 99, 138),
+                                color: Color.fromARGB(255, 0, 190, 13),
                               ),
                             ),
                           ),
@@ -217,7 +217,7 @@ class RekomendasiScreen extends StatelessWidget {
                             child: Container(
                               decoration: BoxDecoration (
                                 borderRadius: BorderRadius.circular(10),
-                                color: Color.fromARGB(255, 0, 99, 138),
+                                color: Color.fromARGB(255, 203, 217, 0),
                               ),
                             ),
                           ),
@@ -287,7 +287,7 @@ class RekomendasiScreen extends StatelessWidget {
                             child: Container(
                               decoration: BoxDecoration (
                                 borderRadius: BorderRadius.circular(10),
-                                color: Color.fromARGB(255, 0, 99, 138),
+                                color: Color.fromARGB(255, 213, 146, 0),
                               ),
                             ),
                           ),
@@ -358,7 +358,7 @@ class RekomendasiScreen extends StatelessWidget {
                             child: Container(
                               decoration: BoxDecoration (
                                 borderRadius: BorderRadius.circular(10),
-                                color: Color.fromARGB(255, 0, 99, 138),
+                                color: Color.fromARGB(255, 214, 0, 0),
                               ),
                             ),
                           ),
