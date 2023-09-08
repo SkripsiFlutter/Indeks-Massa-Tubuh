@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'menuScreen.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -27,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Navigator.pushAndRemoveUntil(
       context,
       MaterialPageRoute(
-        builder: (BuildContext context) => MenuScreen(),
+        builder: (BuildContext context) => CarouselMenuPage(),
       ),
       (route) => false,
     );
@@ -45,14 +46,20 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-               SizedBox(height: 100),
           Image.asset(
             'assets/Logo.png',
             width: Kwidth * 0.3,
             height: Kheight * 0.3,
           ),
+          // SizedBox(height: 5),
+          Text('Sustain Your Ideal, Embrace the \n Real: Your Health, Your Priority',
+          style: GoogleFonts.robotoCondensed(
+            fontSize: 14,
+            fontWeight: FontWeight.w400,
+            color: Colors.black
+          ),),
           SizedBox(
-            height: 150,
+            height: 100,
           ),
               SizedBox(
                 height: Kheight * 0.04,
